@@ -55,14 +55,51 @@ person.gender = 'female';
 //   console.log('key ', key, person[key])
 // }
 
-function sayHello(name) {
-  var hello = 'hello';
+// function sayHello(name) {
+//   var hello = 'hello';
 
-  console.log(hello + ' ' + name);
-  console.log(`${hello} ${name}`);
+//   console.log(hello + ' ' + name);
+//   console.log(`${hello} ${name}`);
 
-  return hello;
+//   return hello;
+// }
+
+
+// console.log(sayHello('Jason'));
+
+// function call(func) {
+//   // console.log('func ', func);
+
+//   console.log(typeof func === 'string');
+
+//   func();
+// }
+
+// call(sayHello);
+
+
+function counter() {
+  var count = 0;
+
+  function childScope() {
+    return count += 1;
+  }
+
+  return childScope;
 }
+console.log(counter)
 
+counter = counter();
 
-console.log(sayHello('Jason'));
+console.log(counter())
+// 1
+console.log(counter())
+// 2
+console.log(counter())
+// 3
+console.log(counter())
+// 4
+console.log(counter())
+// 5
+console.log(counter())
+// 6
